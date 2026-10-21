@@ -1,7 +1,31 @@
+/* Typography and color scheme adapted from the Jon Barron academic homepage
+   template (https://jonbarron.info/, source: github.com/jonbarron/jonbarron.github.io),
+   which is explicitly offered for reuse. */
+
+@font-face {
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Lato Regular'), local('Lato-Regular'), url(https://fonts.gstatic.com/s/lato/v15/S6uyw4BMUTPHjx4wXiWtFCc.woff2) format('woff2');
+}
+@font-face {
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Lato Bold'), local('Lato-Bold'), url(https://fonts.gstatic.com/s/lato/v15/S6u9w4BMUTPHh6UVSwiPGQ3q5d0.woff2) format('woff2');
+}
+@font-face {
+  font-family: 'Lato';
+  font-style: italic;
+  font-weight: 400;
+  src: local('Lato Italic'), local('Lato-Italic'), url(https://fonts.gstatic.com/s/lato/v15/S6u8w4BMUTPHjxsAXC-qNiXg7Q.woff2) format('woff2');
+}
+
 :root {
+  --link: #1772d0;
+  --link-hover: #f09228;
   --text: #222;
   --muted: #5a5a5a;
-  --accent: #2f4f6f;
   --border: #e3e3e3;
   --bg: #ffffff;
   --max-width: 900px;
@@ -9,12 +33,25 @@
 
 * { box-sizing: border-box; }
 
-body {
+body, td, th, tr, p, a {
+  font-family: 'Lato', Verdana, Helvetica, sans-serif;
+  font-size: 14px;
   margin: 0;
   background: var(--bg);
   color: var(--text);
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
   line-height: 1.6;
+}
+
+strong { font-family: 'Lato', Verdana, Helvetica, sans-serif; }
+
+a {
+  color: var(--link);
+  text-decoration: none;
+}
+
+a:hover, a:focus {
+  color: var(--link-hover);
+  text-decoration: none;
 }
 
 .container {
@@ -33,21 +70,22 @@ body {
 
 .header-text { flex: 1; }
 
-.header h1 {
+.name {
   margin: 0 0 6px;
-  font-size: 2rem;
+  font-family: 'Lato', Verdana, Helvetica, sans-serif;
+  font-size: 32px;
   font-weight: 700;
 }
 
 .header .tagline {
   margin: 0 0 14px;
   color: var(--muted);
-  font-size: 1.02rem;
+  font-size: 14px;
 }
 
 .header img.avatar {
-  width: 140px;
-  height: 140px;
+  width: 160px;
+  height: 160px;
   border-radius: 50%;
   flex-shrink: 0;
   object-fit: cover;
@@ -55,15 +93,8 @@ body {
 
 .links {
   margin: 10px 0 0;
-  font-size: 0.95rem;
+  font-size: 14px;
 }
-
-.links a {
-  color: var(--accent);
-  text-decoration: none;
-}
-
-.links a:hover { text-decoration: underline; }
 
 .links .sep {
   color: var(--border);
@@ -71,34 +102,24 @@ body {
 }
 
 /* Sections */
-section {
-  margin-top: 40px;
-}
+section { margin-top: 40px; }
 
 section h2 {
-  font-size: 1.25rem;
+  margin: 0 0 16px;
+  font-weight: normal;
+  font-family: 'Lato', Verdana, Helvetica, sans-serif;
+  font-size: 22px;
   border-bottom: 1px solid var(--border);
   padding-bottom: 8px;
-  margin-bottom: 16px;
-  color: var(--text);
 }
 
-ul.plain {
-  margin: 0;
-  padding-left: 1.2em;
-}
-
+ul.plain { margin: 0; padding-left: 1.2em; }
 ul.plain li { margin-bottom: 6px; }
 
-.note {
-  color: var(--muted);
-  font-size: 0.92rem;
-}
+.note { color: var(--muted); font-size: 13px; }
 
 /* Experience / Education entries */
-.entry {
-  margin-bottom: 14px;
-}
+.entry { margin-bottom: 14px; }
 
 .entry-title-row {
   display: flex;
@@ -107,23 +128,22 @@ ul.plain li { margin-bottom: 6px; }
   flex-wrap: wrap;
 }
 
-.entry-title {
-  font-weight: 600;
-}
+.entry-title { font-weight: 700; }
 
 .entry-date {
   color: var(--muted);
-  font-size: 0.92rem;
+  font-size: 13px;
   white-space: nowrap;
 }
 
 .entry-sub {
   color: var(--muted);
-  font-size: 0.95rem;
+  font-size: 14px;
   margin: 2px 0 6px;
 }
 
-/* Publications */
+/* Publications, in the Barron-style repeating block:
+   bold title / authors with self bolded / italic venue / link row / summary */
 .pub {
   display: grid;
   grid-template-columns: 1fr;
@@ -135,47 +155,26 @@ ul.plain li { margin-bottom: 6px; }
 .pub:last-child { border-bottom: none; }
 
 .pub-title {
-  font-weight: 600;
-  font-size: 1.02rem;
+  font-family: 'Lato', Verdana, Helvetica, sans-serif;
+  font-size: 15px;
+  font-weight: 700;
 }
 
-.pub-title a {
-  color: var(--accent);
-  text-decoration: none;
-}
-
-.pub-title a:hover { text-decoration: underline; }
-
-.pub-authors { font-size: 0.95rem; }
-
-.pub-authors .me { font-weight: 600; }
+.pub-authors { font-size: 14px; }
+.pub-authors .me { font-weight: 700; }
 
 .pub-venue {
   font-style: italic;
   color: var(--muted);
-  font-size: 0.92rem;
+  font-size: 13px;
 }
 
-.pub-links {
-  font-size: 0.88rem;
-  margin-top: 2px;
-}
-
-.pub-links a {
-  color: var(--accent);
-  margin-right: 10px;
-  text-decoration: none;
-}
-
-.pub-links a:hover { text-decoration: underline; }
-
-.pub-links .todo {
-  color: #b00020;
-  font-style: italic;
-}
+.pub-links { font-size: 13px; margin-top: 2px; }
+.pub-links a { margin-right: 10px; }
+.pub-links .todo { color: #b00020; font-style: italic; }
 
 .pub-desc {
-  font-size: 0.93rem;
+  font-size: 13px;
   color: var(--muted);
   margin-top: 4px;
 }
@@ -185,9 +184,11 @@ footer {
   padding-top: 20px;
   border-top: 1px solid var(--border);
   color: var(--muted);
-  font-size: 0.85rem;
+  font-size: 12px;
   text-align: center;
 }
+
+footer a { color: var(--muted); text-decoration: underline; }
 
 @media (max-width: 560px) {
   .header { flex-direction: column; text-align: center; }
