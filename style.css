@@ -156,8 +156,7 @@ ul.plain li { margin-bottom: 6px; }
 
 .pub-thumb {
   width: 220px;
-  height: 110px;
-  object-fit: cover;
+  height: auto;
   border-radius: 4px;
   border: 1px solid var(--border);
   flex-shrink: 0;
