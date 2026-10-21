@@ -145,14 +145,30 @@ ul.plain li { margin-bottom: 6px; }
 /* Publications, in the Barron-style repeating block:
    bold title / authors with self bolded / italic venue / link row / summary */
 .pub {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 4px;
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
   padding: 16px 0;
   border-bottom: 1px solid var(--border);
 }
 
 .pub:last-child { border-bottom: none; }
+
+.pub-thumb {
+  width: 220px;
+  height: 110px;
+  object-fit: cover;
+  border-radius: 4px;
+  border: 1px solid var(--border);
+  flex-shrink: 0;
+}
+
+.pub-body {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 4px;
+  min-width: 0;
+}
 
 .pub-title {
   font-family: 'Lato', Verdana, Helvetica, sans-serif;
@@ -193,4 +209,6 @@ footer a { color: var(--muted); text-decoration: underline; }
 @media (max-width: 560px) {
   .header { flex-direction: column; text-align: center; }
   .entry-title-row { flex-direction: column; }
+  .pub { flex-direction: column; }
+  .pub-thumb { width: 100%; height: auto; }
 }
