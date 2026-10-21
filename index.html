@@ -94,9 +94,9 @@
         <div class="pub-title"><a href="https://arxiv.org/abs/2610.22537" target="_blank" rel="noopener">FlashControl: One-Step Controllable Generation via Distillation-Friendly Single-Stream Teachers</a></div>
         <div class="pub-authors"><span class="me">Ngan Nguyen</span>*, Dung Nguyen*, Quan Dao, Dimitris N. Metaxas, Minh Hoai, Cuong Pham, Anh Tuan Tran</div>
         <div class="pub-venue">Advances in Neural Information Processing Systems (NeurIPS), 2026</div>
-        <div class="pub-desc">Replaces the dual-branch design of prior controllable-generation methods with a
-          single-stream teacher that is easy to distil, enabling one-step spatially-controllable
-          image generation.</div>
+        <div class="pub-desc">We make controllable image generation possible in just one step. Instead of
+          using complicated control branches like ControlNet, we build a simpler teacher model and
+          distill it into a fast, one-step generator.</div>
         <div class="pub-links">
           <a href="https://arxiv.org/abs/2610.22537" target="_blank" rel="noopener">arXiv</a>
         </div>
@@ -109,8 +109,9 @@
         <div class="pub-title"><a href="https://arxiv.org/abs/2606.32020" target="_blank" rel="noopener">Cross-Space Distillation: Teaching One-Step Students with Modern Diffusion Teachers</a></div>
         <div class="pub-authors"><span class="me">Ngan Nguyen</span>*, Anh Nguyen*, Duc Vu*, Trung Dao, Viet Nguyen, Quan Dao, Kien Nguyen, Chi Tran, Phong Nguyen, Khoi Nguyen, Cuong Pham, Dimitris N. Metaxas, Vishal M. Patel, Anh Tran</div>
         <div class="pub-venue">European Conference on Computer Vision (ECCV), 2026</div>
-        <div class="pub-desc">Introduces "Bridge," a lightweight latent-space interface that enables one-step
-          distillation across students and teachers with mismatched resolutions and architectures.</div>
+        <div class="pub-desc">We enable large, powerful diffusion models to teach smaller models, even when
+          they use different latent spaces. We introduce a lightweight bridge between them, improving
+          image quality while keeping generation fast and requiring only one step.</div>
         <div class="pub-links">
           <a href="https://arxiv.org/abs/2606.32020" target="_blank" rel="noopener">arXiv</a>
         </div>
@@ -123,8 +124,10 @@
         <div class="pub-title"><a href="https://qualcomm-ai-research.github.io/InverFill/" target="_blank" rel="noopener">InverFill: One-Step Inversion for Enhanced Few-Step Diffusion Inpainting</a></div>
         <div class="pub-authors">Duc Vu*, <span class="me">Ngan Nguyen</span>*, Kien Nguyen*, Trong-Tung Nguyen*, Phong Nguyen, Khoi Nguyen, Cuong Pham, Anh Tran</div>
         <div class="pub-venue">IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR), 2026</div>
-        <div class="pub-desc">A one-step inversion network that improves the quality and efficiency of
-          few-step diffusion inpainting.</div>
+        <div class="pub-desc">We make image inpainting faster and more natural. Instead of starting from
+          random noise, we predict noise that already contains information from the original image,
+          helping few-step diffusion models fill missing regions more seamlessly without retraining a
+          specialized inpainting model.</div>
         <div class="pub-links">
           <a href="https://qualcomm-ai-research.github.io/InverFill/" target="_blank" rel="noopener">Project Page</a>
           <a href="https://arxiv.org/abs/2603.23463" target="_blank" rel="noopener">arXiv</a>
@@ -138,8 +141,9 @@
         <div class="pub-title"><a href="https://arxiv.org/abs/2509.01984" target="_blank" rel="noopener">Discrete Noise Inversion for Next-scale Autoregressive Text-based Image Editing (VARIN)</a></div>
         <div class="pub-authors">Quan Dao, Xiaoxiao He, Ligong Han, <span class="me">Ngan Nguyen</span>, Amin Heyrani Nobar, Faez Ahmed, Han Zhang, Viet Anh Nguyen, Dimitris N. Metaxas</div>
         <div class="pub-venue">European Conference on Computer Vision (ECCV), 2026</div>
-        <div class="pub-desc">Proposes a noise-inversion technique for visual autoregressive models, allowing
-          accurate reconstruction of a source image while enabling controlled, prompt-based edits.</div>
+        <div class="pub-desc">We enable text-guided image editing with autoregressive image models without
+          additional training. By reversing the model's discrete sampling process, we can reconstruct
+          an image and edit specific parts while preserving its original structure and background.</div>
         <div class="pub-links">
           <a href="https://arxiv.org/abs/2509.01984" target="_blank" rel="noopener">arXiv</a>
         </div>
@@ -154,6 +158,10 @@
         <div class="pub-title">Beyond the VAE Bottleneck: One-Step Pixel Diffusion from Latent Teachers</div>
         <div class="pub-authors"><span class="me">Ngan Nguyen</span>*, Duc Vu*, Anh Nguyen, Cuong Pham, Anh Tran</div>
         <div class="pub-venue">Under Review, 2026</div>
+        <div class="pub-desc">We make one-step image generation faster by generating pixels directly,
+          removing the need for a VAE decoder. We transfer knowledge from powerful latent diffusion
+          models into a pixel-space generator, achieving high-quality images with at least 1.5&times;
+          faster inference than the compared one-step latent models.</div>
         <div class="pub-links">
           <a href="papers/Beyond_the_VAE_Bottleneck.pdf" target="_blank" rel="noopener">PDF</a>
         </div>
@@ -166,6 +174,10 @@
         <div class="pub-title">VideoDrift: Plug-and-Play Video Refinement for Diffusion Models via KV-Anchored Attention</div>
         <div class="pub-authors"><span class="me">Ngan Nguyen</span>, Duc Vu, Trong-Tung Nguyen, Phuc Hong Lai, Cuong Pham, Anh Tran</div>
         <div class="pub-venue">Under Review, 2026</div>
+        <div class="pub-desc">We improve the visual quality of generated videos without rerunning the
+          original video model. We invert and regenerate each frame using a strong one-step image
+          model, then use attention from reference frames to maintain visual consistency across the
+          video.</div>
         <div class="pub-links">
           <a href="papers/VideoDrift.pdf" target="_blank" rel="noopener">PDF</a>
         </div>
