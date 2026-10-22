@@ -273,3 +273,50 @@ footer a { color: var(--muted); text-decoration: underline; }
   .pub { flex-direction: column; }
   .pub-thumb { width: 100%; height: auto; }
 }
+
+/* Pet runner */
+.pet-runner {
+  position: fixed;
+  bottom: 10px;
+  left: -70px;
+  width: 56px;
+  height: 34px;
+  pointer-events: none;
+  z-index: 50;
+  filter: drop-shadow(0 2px 3px rgba(0, 0, 0, 0.25));
+  animation: pet-run 14s linear infinite;
+}
+
+.pet-runner svg { display: block; }
+
+.pet-leg {
+  transform-origin: 50% 0%;
+  animation: pet-leg-swing 0.35s ease-in-out infinite;
+}
+
+.pet-leg-back { animation-delay: 0s; }
+.pet-leg-front { animation-delay: 0.175s; }
+
+.pet-tail {
+  transform-origin: 90% 50%;
+  animation: pet-tail-wag 0.5s ease-in-out infinite;
+}
+
+@keyframes pet-run {
+  0%   { left: -70px; }
+  100% { left: calc(100vw + 10px); }
+}
+
+@keyframes pet-leg-swing {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-3px) rotate(8deg); }
+}
+
+@keyframes pet-tail-wag {
+  0%, 100% { transform: rotate(-8deg); }
+  50% { transform: rotate(8deg); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pet-runner, .pet-leg, .pet-tail { animation: none; }
+}
