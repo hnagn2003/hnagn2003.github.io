@@ -29,17 +29,48 @@
   --border: #e3e3e3;
   --bg: #ffffff;
   --max-width: 900px;
+  color-scheme: light dark;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --link: #4aa8ff;
+    --link-hover: #ffb454;
+    --text: #e8e8e8;
+    --muted: #a0a0a0;
+    --border: #3a3a3a;
+    --bg: #1a1a1a;
+  }
+}
+
+html[data-theme="dark"] {
+  --link: #4aa8ff;
+  --link-hover: #ffb454;
+  --text: #e8e8e8;
+  --muted: #a0a0a0;
+  --border: #3a3a3a;
+  --bg: #1a1a1a;
+}
+
+html[data-theme="light"] {
+  --link: #1772d0;
+  --link-hover: #f09228;
+  --text: #222;
+  --muted: #5a5a5a;
+  --border: #e3e3e3;
+  --bg: #ffffff;
 }
 
 * { box-sizing: border-box; }
 
 body, td, th, tr, p, a {
   font-family: 'Lato', Verdana, Helvetica, sans-serif;
-  font-size: 14px;
+  font-size: 16.8px;
   margin: 0;
   background: var(--bg);
   color: var(--text);
   line-height: 1.6;
+  transition: background-color 0.2s ease, color 0.2s ease;
 }
 
 strong { font-family: 'Lato', Verdana, Helvetica, sans-serif; }
@@ -73,14 +104,14 @@ a:hover, a:focus {
 .name {
   margin: 0 0 6px;
   font-family: 'Lato', Verdana, Helvetica, sans-serif;
-  font-size: 32px;
+  font-size: 38.4px;
   font-weight: 700;
 }
 
 .header .tagline {
   margin: 0 0 14px;
   color: var(--muted);
-  font-size: 14px;
+  font-size: 16.8px;
 }
 
 .header img.avatar {
@@ -93,12 +124,28 @@ a:hover, a:focus {
 
 .links {
   margin: 10px 0 0;
-  font-size: 14px;
+  font-size: 16.8px;
 }
 
 .links .sep {
   color: var(--border);
   margin: 0 8px;
+}
+
+.theme-toggle {
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+  font-size: inherit;
+  font-family: inherit;
+  line-height: inherit;
+  color: var(--link);
+  cursor: pointer;
+}
+
+.theme-toggle:hover, .theme-toggle:focus {
+  color: var(--link-hover);
 }
 
 /* Sections */
@@ -108,7 +155,7 @@ section h2 {
   margin: 0 0 16px;
   font-weight: normal;
   font-family: 'Lato', Verdana, Helvetica, sans-serif;
-  font-size: 22px;
+  font-size: 26.4px;
   border-bottom: 1px solid var(--border);
   padding-bottom: 8px;
 }
@@ -116,7 +163,7 @@ section h2 {
 ul.plain { margin: 0; padding-left: 1.2em; }
 ul.plain li { margin-bottom: 6px; }
 
-.note { color: var(--muted); font-size: 13px; }
+.note { color: var(--muted); font-size: 15.6px; }
 
 /* Experience / Education entries */
 .entry { margin-bottom: 14px; }
@@ -132,13 +179,13 @@ ul.plain li { margin-bottom: 6px; }
 
 .entry-date {
   color: var(--muted);
-  font-size: 13px;
+  font-size: 15.6px;
   white-space: nowrap;
 }
 
 .entry-sub {
   color: var(--muted);
-  font-size: 14px;
+  font-size: 16.8px;
   margin: 2px 0 6px;
 }
 
@@ -171,25 +218,25 @@ ul.plain li { margin-bottom: 6px; }
 
 .pub-title {
   font-family: 'Lato', Verdana, Helvetica, sans-serif;
-  font-size: 15px;
+  font-size: 18px;
   font-weight: 700;
 }
 
-.pub-authors { font-size: 14px; }
+.pub-authors { font-size: 16.8px; }
 .pub-authors .me { font-weight: 700; }
 
 .pub-venue {
   font-style: italic;
   color: var(--muted);
-  font-size: 13px;
+  font-size: 15.6px;
 }
 
-.pub-links { font-size: 13px; margin-top: 2px; }
+.pub-links { font-size: 15.6px; margin-top: 2px; }
 .pub-links a { margin-right: 10px; }
 .pub-links .todo { color: #b00020; font-style: italic; }
 
 .pub-desc {
-  font-size: 13px;
+  font-size: 15.6px;
   color: var(--muted);
   margin-top: 4px;
 }
@@ -199,7 +246,7 @@ footer {
   padding-top: 20px;
   border-top: 1px solid var(--border);
   color: var(--muted);
-  font-size: 12px;
+  font-size: 14.4px;
   text-align: center;
 }
 

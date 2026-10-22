@@ -21,6 +21,8 @@
         <a href="CV.pdf">CV</a>
         <span class="sep">/</span>
         <a href="https://github.com/hnagn2003">GitHub</a>
+        <span class="sep">/</span>
+        <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Toggle dark mode" title="Toggle dark mode">🌙</button>
       </div>
     </div>
     <img class="avatar" src="images/avatar.jpg" alt="Ngan Nguyen">
@@ -191,5 +193,35 @@
   </footer>
 
 </div>
+
+<script>
+(function () {
+  var root = document.documentElement;
+  var toggle = document.getElementById('theme-toggle');
+  var stored = localStorage.getItem('theme');
+
+  function effectiveTheme() {
+    if (stored === 'light' || stored === 'dark') return stored;
+    return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+  }
+
+  function applyIcon(theme) {
+    toggle.textContent = theme === 'dark' ? '☀️' : '🌙';
+  }
+
+  if (stored === 'light' || stored === 'dark') {
+    root.setAttribute('data-theme', stored);
+  }
+  applyIcon(effectiveTheme());
+
+  toggle.addEventListener('click', function () {
+    var next = effectiveTheme() === 'dark' ? 'light' : 'dark';
+    root.setAttribute('data-theme', next);
+    localStorage.setItem('theme', next);
+    stored = next;
+    applyIcon(next);
+  });
+})();
+</script>
 </body>
 </html>
