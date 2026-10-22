@@ -166,7 +166,22 @@ ul.plain li { margin-bottom: 6px; }
 .note { color: var(--muted); font-size: 15.6px; }
 
 /* Experience / Education entries */
-.entry { margin-bottom: 14px; }
+.entry {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  margin-bottom: 14px;
+}
+
+.entry-logo {
+  width: 140px;
+  height: 40px;
+  object-fit: contain;
+  object-position: left center;
+  flex-shrink: 0;
+}
+
+.entry-body { min-width: 0; }
 
 .entry-title-row {
   display: flex;
