@@ -168,16 +168,16 @@ ul.plain li { margin-bottom: 6px; }
 /* Experience / Education entries */
 .entry {
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   gap: 16px;
   margin-bottom: 14px;
 }
 
 .entry-logo {
-  width: 140px;
-  height: 40px;
+  width: 64px;
+  height: 28px;
   object-fit: contain;
-  object-position: left center;
+  object-position: center center;
   flex-shrink: 0;
 }
 
